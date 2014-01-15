@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/* Responsive Setup */
+
+@-moz-viewport { width: device-width; scale: 1;}
+@-ms-viewport { width: device-width; scale: 1;}
+@-webkit-viewport { width: device-width; scale: 1;}
+@-o-viewport { width: device-width; scale: 1;}
+@viewport { width: device-width; scale: 1;}
+
+html{
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+/* CSS */
+
+html, body{
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.masthead {
+	background-color: #666;
+	width: 90%;
+	margin: auto;
+}
+
+.logo {
+	width: 35px;
+	position: absolute;
+	left: 7%;
+	top: 1.5rem;
+}
+
+h1 {
+	color: #fff;
+	font-size: 3rem;
+	padding: 1.5rem 8%;
+}
+
+h2 {
+	color: #333;
+	margin-top: 2rem;
+}
+
+h3 {
+	font-size: 1rem;
+	color: #666;
+}
+
+h1, 
+.main,
+.copyright{
+	width: 90%;
+	margin: 1rem auto;
+}
+
+.copyright{
+	color: #999;
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+
+p {
+	line-height: 1.5rem;
+}
+
+strong {
+	font-weight:bold;
+}
+
+em {
+	font-style: italic;
+}
+
+img{
+	width: 100%;
+}
+
+.feature {
+	box-shadow: 6px 10px 15px 0 rgba(0,0,0,.5);
+}
+
+.hide-text {
+text-indent: 100%;
+white-space: nowrap;
+overflow: hidden;
+}
+
+.nav-btn,
+.nav-btn:link,
+.nav-btn:visited{
+	display: block;
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	top: 16px;	
+	right: 5.5%;
+	
+	background: #666 url('../images/nav-icon.svg') no-repeat center center;
+	/* background-color || background-image || background-repeat || background-position*/
+}
+
+.nav-btn:hover,
+.nav-btn:focus,
+.nav-btn:active{
+	background-color: #999;
+}
+
+.nav a, 
+.nav a:link,
+.nav a:visited{
+	display: block;
+	padding: 1rem;
+	text-align:center;
+	color: #fff;
+	text-decoration: none;
+	background-color: #333;
+	border-top: 2px solid #fff;
+	/* border-width || border-style || border-color */
+}
+
+
+/* Toggle Nav Styles*/
+
+
+.nav-top{
+	display: none;
+}
+
+.nav-top[data-state="expanded"]{
+	display: block;
+}
+
+/* Prices list */
+
+.grey {
+	background-color: #eee;
+	line-height: 1.5rem;
+}
+
+.white {
+	line-height: 1.5rem;
+}
+
+/* Schedule Table */
+
+table { 
+	margin-top: 5%;	
+	margin-bottom: 5%;
+	width: 100%; 
+	border-collapse: collapse; 
+}
+
+tr:nth-of-type(odd) { 
+	background: #eee;
+}
+th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+td, th { 
+	padding: 6px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+	display: block; 
+}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+thead tr { 
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+	
+tr { border: 1px solid #ccc; }
+	
+td { 
+	/* Behave  like a "row" */
+	border: 1px solid #fff;
+	border-bottom: 1px solid #eee; 
+	position: relative;
+	padding-left: 50%; 
+}
+	
+td:before { 
+	/* Now like a table header */
+	position: absolute;
+	/* Top/left values mimic padding */
+	top: 6px;
+	left: 6px;
+	width: 45%; 
+	padding-right: 10px; 
+	white-space: nowrap;
+}
+	
+	/*
+	Label the data
+	*/
+	td:nth-of-type(1):before { content: "Monday"; }
+	td:nth-of-type(2):before { content: "Tuesday"; }
+	td:nth-of-type(3):before { content: "Wednesday"; }
+	td:nth-of-type(4):before { content: "Thursday"; }
+	td:nth-of-type(5):before { content: "Friday"; }
+	td:nth-of-type(6):before { content: "Saturday"; }
+	td:nth-of-type(7):before { content: "Sunday"; }
+}
